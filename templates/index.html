@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>MS SPAM DETECTOR</title>
+
+    </head>
+
+    <body 
+    style = "   
+            display: flex; 
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh; 
+            align-items: center; 
+            justify-content: center; 
+            flex-direction: column; 
+            text-align: center; 
+            background: #ebe2e2;
+            " >
+
+        <!-- Website Title -->
+    	<div >
+    		<h2 ><span>SPAM DETECTOR</h2>
+            <div>
+    			<p>Please type in the text box to check whether the message is a Spam or Not</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div >
+    		<form action="{{ url_for('predict') }}" method="POST">
+        		<textarea  name="message" rows="15" cols="75" placeholder="Enter Your Message Here... "></textarea><br/>
+        		<!-- <input type="submit"  value="Predict"> -->
+                <button type="submit" class="btn btn-success">Predict</button>
+        	</form>
+    	</div>
+
+
+        <br>
+        <table  style="width: 80%; text-align: justify;  vertical-align: middle">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:15%">Examples</th>
+                    <th scope="col">SMS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">SPAM</th>
+                    <td>URGENT! You have won a 1 week FREE membership in our $100,000 Prize Jackpot! Txt the word: CLAIM to No: 81010 T&C www.dbuk.net LCCLTD POBOX 4403LDNW1A7RW18</td>
+                </tr>
+                <tr>
+                    <th scope="row">HAM</th>
+                    <td>Pls go ahead with watts. I just wanted to be sure. Do have a great weekend. Abiola</td>
+                </tr>
+                <tr>
+                    <th scope="row">SPAM</th>
+                    <td>Thanks for your subscription to Ringtone UK your mobile will be charged $5/month Please confirm by replying YES or NO. If you reply NO you will not be charged</td>
+                </tr>
+                <tr>
+                    <th scope="row">HAM</th>
+                    <td>U don't know how stubborn I am. I didn't even want to go to the hospital. I kept telling Mark I'm not a weak sucker. Hospitals are for weak suckers.</td>
+                </tr>
+              
+            </tbody>
+        </table>
+
+
+    </body>
+</html>

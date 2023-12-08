@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>SMS SPAM DETECTOR</title>
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+		<div >
+			<h2 ><span>SPAM DETECTOR</h2>
+	        	<div >
+				<p>Let's see whether the message is a Spam or Not</p>
+			</div>
+		</div>
+
+		<!-- Result -->
+		<div >
+			{% if prediction==1 %}
+				<h1>Prediction: <span >Gotcha! This message is a SPAM</span></h1>
+			{% elif prediction==0 %}
+				<h1>Prediction: <span >Great! This message is NOT A SPAM</span></h1>
+			{% endif %}
+		</div>
+
+    </body>
+</html>
